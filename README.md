@@ -1,2 +1,2 @@
 # mockaron
-Generate test data easily.
+Generate mock data easily.
