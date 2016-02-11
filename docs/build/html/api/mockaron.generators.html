@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mockaron.generators package &mdash; Mockaron 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Mockaron 0.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mockaron
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mockaron</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>mockaron.generators package</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/mockaron.generators.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mockaron-generators-package">
+<h1>mockaron.generators package<a class="headerlink" href="#mockaron-generators-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mockaron.generators.logo">
+<span id="mockaron-generators-logo-module"></span><h2>mockaron.generators.logo module<a class="headerlink" href="#module-mockaron.generators.logo" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mockaron.generators.logo.IconText">
+<em class="property">class </em><code class="descclassname">mockaron.generators.logo.</code><code class="descname">IconText</code><span class="sig-paren">(</span><em>logo_size=(250</em>, <em>150)</em>, <em>icon_size=(100</em>, <em>100)</em>, <em>margin_left=10</em>, <em>margin_right=10</em>, <em>space=10</em>, <em>icon_path=None</em>, <em>font_path=None</em>, <em>text=None</em>, <em>color=None</em>, <em>max_font_size=80</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mockaron.generators.logo.LogoLayout" title="mockaron.generators.logo.LogoLayout"><code class="xref py py-class docutils literal"><span class="pre">mockaron.generators.logo.LogoLayout</span></code></a></p>
+<p>A layout for logo with an icon on the left and the text on the right.</p>
+<p>The generated image will contain:
+left margin + icon + space + text + right margin</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd><p class="first">import mockaron
+logo_generator = mockaron.logo.LogoGenerator()
+layout = IconText(icon_path=&#8217;/path/to/an/icon.png&#8217;,</p>
+<blockquote>
+<div>font_path=&#8217;/path/to/a/font.ttf&#8217;,
+text=&#8217;Mockaron&#8217;,
+color=(0, 0, 0, 255))</div></blockquote>
+<p class="last">logo_generator.set_layout(layout)
+output_path = &#8216;/path/to/a/file.png&#8217;
+logo_generator.generate(output_path)</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.draw_text">
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>draw</em>, <em>text</em>, <em>text_pos</em>, <em>font</em>, <em>color</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.draw_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.draw_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the logo.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">PIL.Image &#8211; the generated logo.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.get_icon">
+<code class="descname">get_icon</code><span class="sig-paren">(</span><em>icon_path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.get_icon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.get_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.get_icon_position">
+<code class="descname">get_icon_position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.get_icon_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.get_icon_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.get_max_text_width">
+<code class="descname">get_max_text_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.get_max_text_width"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.get_max_text_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.get_text_position">
+<code class="descname">get_text_position</code><span class="sig-paren">(</span><em>height</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.get_text_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.get_text_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.paste_icon">
+<code class="descname">paste_icon</code><span class="sig-paren">(</span><em>img</em>, <em>icon</em>, <em>icon_pos</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.paste_icon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.paste_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.IconText.select_font_size">
+<code class="descname">select_font_size</code><span class="sig-paren">(</span><em>draw</em>, <em>font_path</em>, <em>text</em>, <em>max_text_width</em>, <em>max_font_size=80</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#IconText.select_font_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.IconText.select_font_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mockaron.generators.logo.LogoGenerator">
+<em class="property">class </em><code class="descclassname">mockaron.generators.logo.</code><code class="descname">LogoGenerator</code><a class="reference internal" href="../_modules/mockaron/generators/logo.html#LogoGenerator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.LogoGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mockaron.generators.Generator" title="mockaron.generators.Generator"><code class="xref py py-class docutils literal"><span class="pre">mockaron.generators.Generator</span></code></a></p>
+<p>The logo generator, for use with layout (e.g. IconText).</p>
+<dl class="method">
+<dt id="mockaron.generators.logo.LogoGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>logo_path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#LogoGenerator.generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.LogoGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the logo and saves it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>logo_path</strong> (<em>str.</em>) &#8211; The output file path. The image type is inferred by the filename extension.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">PIL.Image &#8211; the generated logo.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.LogoGenerator.get_layout">
+<code class="descname">get_layout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#LogoGenerator.get_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.LogoGenerator.get_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mockaron.generators.logo.LogoGenerator.set_layout">
+<code class="descname">set_layout</code><span class="sig-paren">(</span><em>layout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mockaron/generators/logo.html#LogoGenerator.set_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.LogoGenerator.set_layout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mockaron.generators.logo.LogoLayout">
+<em class="property">class </em><code class="descclassname">mockaron.generators.logo.</code><code class="descname">LogoLayout</code><a class="reference internal" href="../_modules/mockaron/generators/logo.html#LogoLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.logo.LogoLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mockaron.generators">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mockaron.generators" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mockaron.generators.Generator">
+<em class="property">class </em><code class="descclassname">mockaron.generators.</code><code class="descname">Generator</code><a class="reference internal" href="../_modules/mockaron/generators.html#Generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mockaron.generators.Generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Kascale (http://kascale.com).
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
