@@ -1,5 +1,5 @@
-# Mockaron
 ![Mockaron Logo](/docs/logo.png)
+# Mockaron
 A library for generating mock data easily.
 Read [documentation](http://mockaron.readthedocs.org).
 
