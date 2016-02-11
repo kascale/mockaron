@@ -1,5 +1,6 @@
 # Mockaron
 A library for generating mock data easily.
+Read [documentation](http://mockaron.readthedocs.org)
 
 # Features
 - logo generation (icon + text)
@@ -27,3 +28,6 @@ logo_generator.set_layout(icon_text)
 # the output image format is inferred by the filename extension
 logo_generator.generate('/path/to/the/logo.png')
 ```
+
+# Authors
+2016, [Kascale](http://kascale.com)
