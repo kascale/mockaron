@@ -60,9 +60,11 @@ class IconText(LogoLayout):
     self.color = color
     self.max_font_size = max_font_size
 
-  def get_icon(self, icon_path):
+  def get_icon(self, icon_path, icon_size):
     icon = Image.open(icon_path)
-    return icon
+    resized_icon = icon.resize(icon_size, Image.BICUBIC)
+    icon.close()
+    return resized_icon
 
   def get_icon_position(self):
     left = self.margin_left
@@ -95,6 +97,7 @@ class IconText(LogoLayout):
   def get_text_position(self, height):
     left = self.margin_left + self.icon_size[0] + self.space
     top = (self.logo_size[1] - height) // 2
+    print(top, height, self.logo_size)
     text_pos = (left, top)
     return text_pos
 
@@ -109,7 +112,7 @@ class IconText(LogoLayout):
     logo_size = self.logo_size
     im = Image.new("RGBA", logo_size)
 
-    icon = self.get_icon(self.icon_path)
+    icon = self.get_icon(self.icon_path, self.icon_size)
     icon_pos = self.get_icon_position()
     self.paste_icon(im, icon, icon_pos)
     icon.close()
