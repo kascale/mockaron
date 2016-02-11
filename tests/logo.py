@@ -17,10 +17,10 @@ class LogoGeneratorTestCase(unittest.TestCase):
     tests_dir = os.path.dirname(os.path.abspath(__file__))
     icon_path = os.path.join(tests_dir, 'icon.png')
     font_path = os.path.join(tests_dir, 'Ubuntu-R.ttf')
-    params = {'logo_size': (250, 150), 'icon_size': (100, 100),
+    params = {'logo_size': (450, 150), 'icon_size': (100, 100),
               'margin_left': 10, 'margin_right': 10, 'space': 10,
               'icon_path': icon_path, 'font_path': font_path,
-              'text': "Mockaron", 'color': None, 'max_font_size': 80}
+              'text': "Mockaron", 'color': (181, 56, 56, 255), 'max_font_size': 80}
     return params
 
   def get_icon_text(self, params=None):
@@ -49,7 +49,7 @@ class LogoGeneratorTestCase(unittest.TestCase):
 
   def test_icon_text_get_icon(self):
     icon_text = self.get_icon_text()
-    icon = icon_text.get_icon(icon_text.icon_path)
+    icon = icon_text.get_icon(icon_text.icon_path, icon_text.icon_size)
     icon.close()
 
   def test_icon_text_select_font_size(self):
